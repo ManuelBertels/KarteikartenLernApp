@@ -1,0 +1,33 @@
+.question {
+  height: 100px;
+  width: 375px;
+  background-color: rgb(237, 218, 218);
+  border-radius: 10px;
+  border: solid black 1px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.answer {
+  height: 100px;
+  width: 360px;
+  background-color: rgb(235, 164, 164);
+  border-radius: 10px;
+  border: solid black 1px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.button {
+  border: solid rgb(215, 216, 160) 1px;
+  border-radius: 10px;
+  background: rgb(201, 195, 195);
+}

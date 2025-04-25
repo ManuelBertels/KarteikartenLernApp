@@ -1,0 +1,16 @@
+.form {
+  height: 120px;
+  width: 375px;
+  border: solid black 1px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 8px;
+  margin-top: 20px;
+}
+
+.formElements {
+  margin: 6px;
+}
