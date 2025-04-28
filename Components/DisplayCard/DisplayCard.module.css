@@ -14,8 +14,8 @@
 
 .answer {
   height: 100px;
-  width: 360px;
-  background-color: rgb(235, 164, 164);
+  width: 375px;
+  background-color: rgb(231, 238, 195);
   border-radius: 10px;
   border: solid black 1px;
   margin-top: 10px;
@@ -27,7 +27,10 @@
 }
 
 .button {
-  border: solid rgb(215, 216, 160) 1px;
+  border: solid rgb(16, 17, 15) 1px;
+  height: 20px;
+  width: 100px;
   border-radius: 10px;
-  background: rgb(201, 195, 195);
+  background: rgb(231, 234, 231);
+  margin: 5px;
 }

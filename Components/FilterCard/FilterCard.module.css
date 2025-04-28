@@ -1,0 +1,24 @@
+.filterForm {
+  margin: 10px;
+}
+
+.divForm {
+  border: solid black 1px;
+  border-radius: 10px;
+  height: 70px;
+  width: 375px;
+  margin-top: 10px;
+  background-color: rgb(238, 235, 235);
+}
+
+.label {
+  display: block;
+  margin-left: 100px;
+  margin-bottom: 2px;
+}
+.select {
+  margin-left: 100px;
+}
+.button {
+  margin-left: 6px;
+}

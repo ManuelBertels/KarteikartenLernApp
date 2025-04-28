@@ -15,7 +15,8 @@ function DisplayCard({ element }) {
     <>
       {isVisible ? (
         <section className={styles.question}>
-          <p>{element.question}</p>
+          <p style={{ margin: 5 }}>Category: {element.category}</p>
+          <p style={{ margin: 5 }}>{element.question}</p>
           <button
             className={styles.button}
             type="button"
@@ -28,7 +29,8 @@ function DisplayCard({ element }) {
         </section>
       ) : (
         <section className={styles.answer}>
-          <p>{element.answer}</p>
+          <p style={{ margin: 5 }}>Category: {element.category}</p>
+          <p style={{ margin: 5 }}>{element.answer}</p>
           <button
             className={styles.button}
             type="button"
