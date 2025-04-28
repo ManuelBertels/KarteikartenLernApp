@@ -1,0 +1,6 @@
+.background {
+  margin-top: -20px;
+  width: 100vw;
+  min-height: 100vh; /* damit du Browserprobleme vermeidest */
+  background-color: rgb(199, 199, 233);
+}
