@@ -1,28 +1,29 @@
 .form {
-  height: 150px;
-  width: 375px;
-  border: solid black 1px;
+  position: fixed;
+  top: 5px;
+  width: 340px;
+  margin: 20px 0 30px 17px;
+  border: solid rgb(244, 243, 243) 1px;
   border-radius: 10px;
   padding: 8px;
-  margin-top: 20px;
-  background-color: rgb(238, 235, 235);
+  background: #f7f6f6;
 }
 
-.button {
-  margin: 6px;
+.buttonCreateCard {
+  margin: 10px 0px 0px 100px;
 }
 
 .input {
   border-radius: 10px;
-  margin-bottom: 5px;
-  margin-left: 100px;
+  margin: 0px 0px 5px 100px;
 }
 
 .label {
   display: block;
-  margin-left: 100px;
+
+  margin: 0px 0px 0px 100px;
 }
 
 .select {
-  margin-left: 100px;
+  margin: 0px 0px 0px 100px;
 }

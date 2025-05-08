@@ -20,6 +20,7 @@ function FilterCard({ handleFilter }) {
             required
           >
             <option value="All">All</option>
+            <option value="allgemein">Allgemeine Fragen</option>
             <option value="mathematik">Mathematik</option>
             <option value="deutsch">Deutsch</option>
             <option value="englisch">Englisch</option>

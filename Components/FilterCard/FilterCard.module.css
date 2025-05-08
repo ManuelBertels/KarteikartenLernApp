@@ -1,24 +1,26 @@
 .filterForm {
-  margin: 10px;
+  margin: 10px 0px 0px 0px;
+  padding-left: 10px;
 }
 
 .divForm {
-  border: solid black 1px;
+  position: fixed;
+  top: 200px;
+  margin: 10px 0px 30px 17px;
+  width: 340px;
+  height: 90px;
   border-radius: 10px;
-  height: 70px;
-  width: 375px;
-  margin-top: 10px;
-  background-color: rgb(238, 235, 235);
+  border: solid rgb(245, 243, 243) 1px;
+  background: #f7f6f6;
 }
 
 .label {
   display: block;
-  margin-left: 100px;
-  margin-bottom: 2px;
+  margin: 0px 0px 2px 100px;
 }
 .select {
-  margin-left: 100px;
+  margin: 0px 0px 0px 100px;
 }
 .button {
-  margin-left: 6px;
+  margin: 8px 0px 0px 100px;
 }

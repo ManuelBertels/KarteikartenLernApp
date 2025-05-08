@@ -39,11 +39,12 @@ function CreateCard({ handleCreateCard }) {
           required
         >
           <option>Category</option>
+          <option value="allgemein">Allgemeine Fragen</option>
           <option value="mathematik">Mathematik</option>
           <option value="deutsch">Deutsch</option>
           <option value="englisch">Englisch</option>
         </select>
-        <button className={styles.button} type="submit">
+        <button className={styles.buttonCreateCard} type="submit">
           Karte erstellen
         </button>
       </form>
