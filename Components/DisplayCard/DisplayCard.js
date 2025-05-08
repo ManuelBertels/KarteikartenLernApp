@@ -1,23 +1,21 @@
 import { useState } from "react";
+import DeleteCard from "../DeleteCard/DeleteCard";
 import styles from "./DisplayCard.module.css";
+import UpdateCard from "../UpdateCard/UpdateCard";
 
-function DisplayCard({ element }) {
+function DisplayCard({ element, handleDelete, handleUpdateCard }) {
   const [button, setButton] = useState(true);
 
-  let isVisible = undefined;
-
-  if (button === true) {
-    isVisible = true;
-  } else {
-    isVisible = false;
-  }
   return (
     <>
-      {isVisible ? (
+      {button ? (
         <section className={styles.question}>
-          <p style={{ margin: 5 }}>Category: {element.category}</p>
-          <p style={{ margin: 5 }}>{element.question}</p>
+          <p style={{ marginLeft: 5, marginBottom: 6, marginTop: 6 }}>
+            {element.category}
+          </p>
+          <p style={{ marginLeft: 110, marginBottom: 6 }}>{element.question}</p>
           <button
+            style={{ marginLeft: 110 }}
             className={styles.button}
             type="button"
             onClick={() => {
@@ -26,12 +24,20 @@ function DisplayCard({ element }) {
           >
             show answer
           </button>
+          <p style={{ marginLeft: 6 }}></p>
+          <DeleteCard element={element} handleDelete={handleDelete} />
+          <UpdateCard element={element} handleUpdateCard={handleUpdateCard} />
         </section>
       ) : (
         <section className={styles.answer}>
-          <p style={{ margin: 5 }}>Category: {element.category}</p>
-          <p style={{ margin: 5 }}>{element.answer}</p>
+          <p style={{ marginLeft: 5, marginBottom: 6, marginTop: 6 }}>
+            {element.category}
+          </p>
+          <p style={{ marginLeft: 110, marginBottom: 6, marginTop: 6 }}>
+            {element.answer}
+          </p>
           <button
+            style={{ marginLeft: 110 }}
             className={styles.button}
             type="button"
             onClick={() => {
@@ -40,6 +46,9 @@ function DisplayCard({ element }) {
           >
             show question
           </button>
+          <p style={{ marginLeft: 6 }}></p>
+          <DeleteCard element={element} handleDelete={handleDelete} />
+          <UpdateCard element={element} handleUpdateCard={handleUpdateCard} />
         </section>
       )}
     </>

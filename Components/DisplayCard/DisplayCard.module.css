@@ -1,29 +1,19 @@
 .question {
-  height: 100px;
-  width: 375px;
-  background-color: rgb(237, 218, 218);
+  height: 120px;
+  width: 340px;
   border-radius: 10px;
-  border: solid black 1px;
-  margin-top: 10px;
-  margin-bottom: 10px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  border: solid rgb(250, 249, 249) 1px;
+  margin: 10px 0px 10px 17px;
+  background: #e0dfdf;
 }
 
 .answer {
-  height: 100px;
-  width: 375px;
-  background-color: rgb(231, 238, 195);
+  height: 120px;
+  width: 340px;
   border-radius: 10px;
-  border: solid black 1px;
-  margin-top: 10px;
-  margin-bottom: 10px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  border: solid rgb(245, 244, 244) 1px;
+  margin: 10px 0px 10px 17px;
+  background: #e0dfdf;
 }
 
 .button {
@@ -32,5 +22,5 @@
   width: 100px;
   border-radius: 10px;
   background: rgb(231, 234, 231);
-  margin: 5px;
+  margin: 5px 0px 0px 0px;
 }

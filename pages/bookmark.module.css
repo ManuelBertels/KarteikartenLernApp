@@ -1,3 +1,12 @@
+.displayBookmarkCard {
+  height: 120px;
+  width: 340px;
+  border-radius: 10px;
+  border: solid rgb(245, 244, 244) 1px;
+  margin: 10px 0px 10px 17px;
+  background: #e0dfdf;
+}
+
 .details {
   margin: 10px 0px 0px 17px;
 }

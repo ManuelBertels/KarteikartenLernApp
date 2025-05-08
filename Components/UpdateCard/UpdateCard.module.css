@@ -1,0 +1,21 @@
+.formUpdate {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.divUpdateCard {
+  border: solid rgb(255, 252, 252) 1px;
+  border-radius: 10px;
+  height: 140px;
+  width: 200px;
+  background-color: rgb(230, 162, 162);
+  position: absolute;
+  z-index: 1;
+}
+
+.buttonUpdateCard {
+  background: none;
+  border: none;
+}
