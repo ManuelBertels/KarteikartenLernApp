@@ -1,7 +1,6 @@
 import LinkPages from "@/Components/LinkPages/LinkPages";
 import style from "./bookmark.module.css";
-import { useState } from "react";
-import ShowBookmarkCard from "@/Components/ShowbookmarkCard";
+import ShowBookmarkCard from "@/Components/ShowBookmarkCard";
 function Bookmark({ allData }) {
   const bookmarkTrueData = allData.filter(
     (element) => element.bookmark === true

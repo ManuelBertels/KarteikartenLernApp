@@ -4,6 +4,7 @@ import style from "@/pages/showCards.module.css";
 function ShowBookmarkCard({ bookmarkTrueData }) {
   const [isVisible, setIsVisible] = useState(false);
 
+  // Funktion zum Entfernen des Bookmarks
   async function handleSetBookmarkfalse(bookmarkTrueData) {
     const responseData = await fetch("/api/hello", {
       method: "PUT",
@@ -13,64 +14,38 @@ function ShowBookmarkCard({ bookmarkTrueData }) {
 
     const responseDataObj = await responseData.json();
   }
+
+  // Umschalten zwischen Frage und Antwort
+  const toggleVisibility = () => {
+    setIsVisible(!isVisible);
+  };
+
   return (
-    <>
-      {isVisible ? (
-        <section className={style.sectionAnswerandQuestion}>
-          <button
-            className={style.buttonBookmark}
-            type="button"
-            onClick={() => {
-              handleSetBookmarkfalse(bookmarkTrueData);
-            }}
-          >
-            Bookmark
-          </button>
-          <div className={style.categoryTextField}>
-            {bookmarkTrueData.category}
-          </div>
+    <section className={style.sectionAnswerandQuestion}>
+      {/* Bookmark-Button */}
+      <button
+        className={style.buttonBookmark}
+        type="button"
+        onClick={() => handleSetBookmarkfalse(bookmarkTrueData)}
+      >
+        Bookmark
+      </button>
 
-          <div className={style.flexContainer}>
-            <p>{bookmarkTrueData.question}</p>
-            <button
-              className={style.buttonShowAndHideAnswer}
-              type="button"
-              onClick={() => {
-                setIsVisible(!isVisible);
-              }}
-            >
-              show answer
-            </button>
-          </div>
-        </section>
-      ) : (
-        <section className={style.sectionAnswerandQuestion}>
-          <button
-            className={style.buttonBookmark}
-            type="button"
-            onClick={() => {
-              handleSetBookmarkfalse(bookmarkTrueData);
-            }}
-          >
-            Bookmark
-          </button>
-          <p className={style.categoryTextField}>{bookmarkTrueData.category}</p>
+      {/* Kategorie anzeigen */}
+      <div className={style.categoryTextField}>{bookmarkTrueData.category}</div>
 
-          <div className={style.flexContainer}>
-            <p>{bookmarkTrueData.answer}</p>
-            <button
-              className={style.buttonShowAndHideAnswer}
-              type="button"
-              onClick={() => {
-                setIsVisible(!isVisible);
-              }}
-            >
-              show question
-            </button>
-          </div>
-        </section>
-      )}
-    </>
+      {/* Frage oder Antwort anzeigen */}
+      <div className={style.flexContainer}>
+        <p>{isVisible ? bookmarkTrueData.answer : bookmarkTrueData.question}</p>
+        <button
+          className={style.buttonShowAndHideAnswer}
+          type="button"
+          onClick={toggleVisibility}
+        >
+          {isVisible ? "show question" : "show answer"}
+        </button>
+      </div>
+    </section>
   );
 }
 
