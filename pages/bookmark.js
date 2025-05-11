@@ -1,6 +1,6 @@
 import LinkPages from "@/Components/LinkPages/LinkPages";
 import style from "./bookmark.module.css";
-import ShowBookmarkCard from "@/Components/ShowBookmarkCard";
+import ShowBookmarkCard from "@/Components/ShowBookmarkCard/ShowBookmarkCard";
 function Bookmark({ allData }) {
   const bookmarkTrueData = allData.filter(
     (element) => element.bookmark === true
