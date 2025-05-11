@@ -1,57 +1,42 @@
 import { useState } from "react";
 import DeleteCard from "../DeleteCard/DeleteCard";
-import styles from "./DisplayCard.module.css";
 import UpdateCard from "../UpdateCard/UpdateCard";
+import styles from "./DisplayCard.module.css";
 
 function DisplayCard({ element, handleDelete, handleUpdateCard }) {
-  const [button, setButton] = useState(true);
+  const [isQuestionVisible, setIsQuestionVisible] = useState(true);
+
+  // Umschalten zwischen Frage und Antwort
+  const toggleVisibility = () => {
+    setIsQuestionVisible(!isQuestionVisible);
+  };
 
   return (
-    <>
-      {button ? (
-        <section className={styles.question}>
-          <p style={{ marginLeft: 5, marginBottom: 6, marginTop: 6 }}>
-            {element.category}
-          </p>
-          <p style={{ marginLeft: 110, marginBottom: 6 }}>{element.question}</p>
-          <button
-            style={{ marginLeft: 110 }}
-            className={styles.button}
-            type="button"
-            onClick={() => {
-              setButton(!button);
-            }}
-          >
-            show answer
-          </button>
-          <p style={{ marginLeft: 6 }}></p>
-          <DeleteCard element={element} handleDelete={handleDelete} />
-          <UpdateCard element={element} handleUpdateCard={handleUpdateCard} />
-        </section>
-      ) : (
-        <section className={styles.answer}>
-          <p style={{ marginLeft: 5, marginBottom: 6, marginTop: 6 }}>
-            {element.category}
-          </p>
-          <p style={{ marginLeft: 110, marginBottom: 6, marginTop: 6 }}>
-            {element.answer}
-          </p>
-          <button
-            style={{ marginLeft: 110 }}
-            className={styles.button}
-            type="button"
-            onClick={() => {
-              setButton(!button);
-            }}
-          >
-            show question
-          </button>
-          <p style={{ marginLeft: 6 }}></p>
-          <DeleteCard element={element} handleDelete={handleDelete} />
-          <UpdateCard element={element} handleUpdateCard={handleUpdateCard} />
-        </section>
-      )}
-    </>
+    <section className={isQuestionVisible ? styles.question : styles.answer}>
+      {/* Kategorie anzeigen */}
+      <p style={{ marginLeft: 5, marginBottom: 6, marginTop: 6 }}>
+        {element.category}
+      </p>
+
+      {/* Frage oder Antwort anzeigen */}
+      <p style={{ marginLeft: 110, marginBottom: 6 }}>
+        {isQuestionVisible ? element.question : element.answer}
+      </p>
+
+      {/* Button zum Umschalten */}
+      <button
+        style={{ marginLeft: 110 }}
+        className={styles.button}
+        type="button"
+        onClick={toggleVisibility}
+      >
+        {isQuestionVisible ? "show answer" : "show question"}
+      </button>
+
+      {/* Komponenten für Löschen und Aktualisieren */}
+      <DeleteCard element={element} handleDelete={handleDelete} />
+      <UpdateCard element={element} handleUpdateCard={handleUpdateCard} />
+    </section>
   );
 }
 

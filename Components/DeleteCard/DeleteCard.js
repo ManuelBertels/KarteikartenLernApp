@@ -3,7 +3,7 @@ import { useState } from "react";
 import styles from "./DeleteCard.module.css";
 
 function DeleteCard({ element, handleDelete }) {
-  const [isConfirmationVisible, setIsConfirmationVisible] = useState(false); // Klarere Benennung
+  const [isConfirmationVisible, setIsConfirmationVisible] = useState(false);
 
   // Umschalten der Bestätigungsanzeige
   function toggleConfirmation() {
@@ -14,7 +14,7 @@ function DeleteCard({ element, handleDelete }) {
     <>
       {/* Haupt-Löschen-Button */}
       <button
-        className={styles.button}
+        className={styles.buttonDeleteImage}
         type="button"
         onClick={toggleConfirmation}
       >
