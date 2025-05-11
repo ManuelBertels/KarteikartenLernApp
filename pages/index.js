@@ -20,6 +20,7 @@ export default function Home({
           height: 250,
           width: 375,
           top: 0,
+          zIndex: 1,
         }}
       >
         <CreateCard handleCreateCard={handleCreateCard} />
