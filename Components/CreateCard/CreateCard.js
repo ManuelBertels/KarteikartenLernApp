@@ -1,14 +1,16 @@
 import styles from "./CreateCard.module.css";
 
 function CreateCard({ handleCreateCard }) {
+  // Funktion zum Verarbeiten des Formulars
+  const handleSubmit = (event) => {
+    event.preventDefault(); // Verhindert das Standardverhalten des Formulars
+    handleCreateCard(event); // Übergibt das Event an die übergebene Funktion
+  };
+
   return (
     <>
-      <form
-        className={styles.form}
-        onSubmit={(event) => {
-          handleCreateCard(event);
-        }}
-      >
+      <form className={styles.form} onSubmit={handleSubmit}>
+        {/* Frage */}
         <label className={styles.label} htmlFor="question">
           Frage
         </label>
@@ -18,7 +20,9 @@ function CreateCard({ handleCreateCard }) {
           name="question"
           id="question"
           required
-        ></input>
+        />
+
+        {/* Antwort */}
         <label className={styles.label} htmlFor="answer">
           Antwort
         </label>
@@ -28,22 +32,29 @@ function CreateCard({ handleCreateCard }) {
           name="answer"
           id="answer"
           required
-        ></input>
+        />
+
+        {/* Kategorie */}
         <label className={styles.label} htmlFor="category">
-          Category
+          Kategorie
         </label>
         <select
           className={styles.select}
           name="category"
           id="category"
+          defaultValue="" // Standardwert für die Dropdown-Auswahl
           required
         >
-          <option>Category</option>
+          <option value="" disabled>
+            Kategorie auswählen
+          </option>
           <option value="allgemein">Allgemeine Fragen</option>
           <option value="mathematik">Mathematik</option>
           <option value="deutsch">Deutsch</option>
           <option value="englisch">Englisch</option>
         </select>
+
+        {/* Erstellen-Button */}
         <button className={styles.buttonCreateCard} type="submit">
           Karte erstellen
         </button>
