@@ -3,42 +3,41 @@ import { useState } from "react";
 import styles from "./DeleteCard.module.css";
 
 function DeleteCard({ element, handleDelete }) {
-  const [button, setButton] = useState(false);
+  const [isConfirmationVisible, setIsConfirmationVisible] = useState(false); // Klarere Benennung
 
-  function handleButton() {
-    setButton(!button);
+  // Umschalten der Bestätigungsanzeige
+  function toggleConfirmation() {
+    setIsConfirmationVisible(!isConfirmationVisible);
   }
 
   return (
     <>
+      {/* Haupt-Löschen-Button */}
       <button
         className={styles.button}
         type="button"
-        onClick={() => {
-          handleButton(element);
-        }}
+        onClick={toggleConfirmation}
       >
-        <Image src="/circle-x.svg" height={25} width={25} alt="bild"></Image>
+        <Image src="/circle-x.svg" height={25} width={25} alt="Delete Icon" />
       </button>
 
-      {button && (
+      {/* Bestätigungsdialog */}
+      {isConfirmationVisible && (
         <div className={styles.deleteContainer}>
           <button
             onClick={() => {
-              handleDelete(element);
-              handleButton();
+              handleDelete(element); // Löschen der Karte
+              toggleConfirmation(); // Bestätigungsdialog schließen
             }}
             className={styles.buttonDelete}
           >
-            löschen
+            Löschen
           </button>
           <button
-            onClick={() => {
-              setButton(!button);
-            }}
+            onClick={toggleConfirmation} // Dialog schließen
             className={styles.buttonDelete}
           >
-            nein
+            Abbrechen
           </button>
         </div>
       )}
